@@ -14,6 +14,9 @@ class BuildTreeRunnable implements Runnable {
      */
     static Map<Character, Integer> charFreqsMap = new HashMap<>();
 
+    /**
+     * Declare a string to explore for character frequencies.
+     */
     private String content;
 
     BuildTreeRunnable(String content) {

@@ -5,7 +5,11 @@
  * @since 1.0
  */
 class HuffmanNode extends HuffmanTree {
-    final HuffmanTree left, right; // subtrees
+
+    /**
+     * The subtrees.
+     */
+    final HuffmanTree left, right;
 
     HuffmanNode(HuffmanTree l, HuffmanTree r) {
         super(l.frequency + r.frequency);

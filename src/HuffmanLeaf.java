@@ -5,6 +5,7 @@
  * @since 1.0
  */
 class HuffmanLeaf extends HuffmanTree {
+
     /**
      * The character this leaf represents.
      */

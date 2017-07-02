@@ -5,6 +5,7 @@
  * @since 1.0
  */
 abstract class HuffmanTree implements Comparable<HuffmanTree> {
+
     /**
      * The frequency of this tree.
      */
