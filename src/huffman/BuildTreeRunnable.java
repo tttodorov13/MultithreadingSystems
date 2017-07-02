@@ -1,3 +1,5 @@
+package huffman;
+
 import java.util.HashMap;
 import java.util.Map;
 

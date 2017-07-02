@@ -1,5 +1,7 @@
+package huffman;
+
 /**
- * HuffmanTest tree's leaf.
+ * huffman.HuffmanTest tree's leaf.
  *
  * @author Toshko Todorov
  * @since 1.0

@@ -1,5 +1,7 @@
+package huffman;
+
 /**
- * HuffmanTest tree realization.
+ * huffman.HuffmanTest tree realization.
  *
  * @author Toshko Todorov
  * @since 1.0

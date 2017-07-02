@@ -1,4 +1,5 @@
-import java.io.FileReader;
+package huffman;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
