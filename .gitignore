@@ -2,4 +2,6 @@
 /multithreadingSystems.iml
 /.idea/
 /out/
-/build/
+/huffman.jar
+/result.dat
+/huffman/
