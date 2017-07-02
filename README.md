@@ -7,12 +7,12 @@
 <h3>Assistent: Hristo Hristov</h3>
 
 <h2>Prerequisites:</h2>
-Linux OS
-Java 8 SE
-Git
+Linux OS \
+Java 8 SE \
+Git \
 
 <h2>To run execute</h2>
-git clone https://github.com/tttodorov13/multithreadingSystems/
-cd multithreadingSystems
-./build.sh
-./run.sh
+git clone https://github.com/tttodorov13/multithreadingSystems/ \
+cd multithreadingSystems \
+./build.sh \
+./run.sh \
