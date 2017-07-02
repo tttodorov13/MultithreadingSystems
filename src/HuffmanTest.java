@@ -49,7 +49,7 @@ public class HuffmanTest {
      */
     private static HuffmanTree buildTree(Map<Character, Integer> charFreqs) {
         PriorityQueue<HuffmanTree> trees = new PriorityQueue<>();
-        // initially, we have a forest of leaves
+        // Initially, there is a forest of leaves
         // one for each non-empty character
         for (Map.Entry<Character, Integer> entry : charFreqs.entrySet()) {
             trees.offer(new HuffmanLeaf(entry.getValue(), entry.getKey()));
@@ -115,8 +115,11 @@ public class HuffmanTest {
 
         // Distribute task on multiple threads.contentList
         Thread jobs[] = new Thread[getNumThreads()];
+
         // Set thread usage counter.
         int jobNumber = 0;
+
+        // Create a content list to be distributed among the threads.
         List<String> contentList = new ArrayList<>();
 
         // Optimize split content into parts.
@@ -171,6 +174,8 @@ public class HuffmanTest {
         // Add the result to be printed into the output file.
         result.add(content.toString());
         result.add(String.format("SYMBOL\tWEIGHT\tCODE"));
+
+        // Build encoding language.
         encode(tree, new StringBuffer());
 
         // Record the end time for execution.
@@ -234,6 +239,7 @@ public class HuffmanTest {
             setQuiet(true);
         }
 
+        // Do the magic.
         runDistributed(pathRead, pathWrite);
     }
 
