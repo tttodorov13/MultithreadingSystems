@@ -99,11 +99,11 @@ public class HuffmanTest {
     }
 
     private static void runDistributed(Path pathRead, Path pathWrite) {
-        // Set the content read from the input file.
-        StringBuffer content = new StringBuffer();
-
         // Record the start time for execution.
         long startTime = System.currentTimeMillis();
+
+        // Set the content read from the input file.
+        StringBuffer content = new StringBuffer();
 
         try {
             // Append the content read from the input file.
