@@ -186,7 +186,7 @@ public class HuffmanTest {
         long elapsedTime = stopTime - startTime;
 
         // Print out the time for execution to console.
-        System.out.format("Total execution time for current run (millis): %d", elapsedTime);
+        System.out.format("Total execution time for current run (millis): %d\n", elapsedTime);
 
         try {
             // Print out the results.
