@@ -204,7 +204,7 @@ public class HuffmanTest {
      */
     public static void main(String[] args) {
         // Print out a leading message to introduce the user to the program.
-        System.out.format("This is an example for Huffman encoding.\nEnter file name and threads' number in format: -f String -t int\n");
+        System.out.format("This is an example for Huffman encoding.\nEnter input file name, threads' number and mode in format: -f String -t int -q\n");
 
         // Set a respond in case of bad request.
         final String WRONG_REQUEST = "Wrong request format!";
