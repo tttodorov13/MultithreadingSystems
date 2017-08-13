@@ -46,33 +46,46 @@ public class ETest {
         // Record the start time for execution.
         long startTime = System.currentTimeMillis();
 
-        // Distribute task on multiple threads.contentList
-        Thread jobs[] = new Thread[getNumThreads()];
-
         // Set thread usage counter.
         int jobNumber = 0;
 
         // Create a content list to be distributed among the threads.
         List<List<Integer>> valuesList = new ArrayList<>();
 
-        // Split content into parts.
+        /*
+         * Split the calculated values into parts.
+         */
         if (getPrecision() > getNumThreads()) {
             List<Integer> valuesSubList = new ArrayList<>();
-            for (int i = 0; i < getPrecision(); i++) {
-                if (i % getNumThreads() != 0) {
-                    valuesSubList.add(i);
-                } else {
+            for (int i = 0; i <= getPrecision(); i++) {
+                if (i > 0 && i % (getPrecision() / getNumThreads()) == 0) {
                     valuesList.add(valuesSubList);
                     valuesSubList = new ArrayList<>();
                 }
+                valuesSubList.add(i);
             }
-        } else {
-            for (int i = 0; i < getPrecision(); i++) {
-                valuesList.add(new ArrayList<>(1));
+            for (int i = 0; i < valuesSubList.size(); i++) {
+                valuesList.get(i).add(valuesSubList.get(i));
             }
         }
 
-        for (int i = 0; i < jobs.length; i++) {
+        if (getPrecision() == getNumThreads()) {
+            valuesList.add(Arrays.asList(0, 1));
+            for (int i = 2; i <= getPrecision(); i++) {
+                valuesList.add(Arrays.asList(i));
+            }
+        }
+
+        if (getPrecision() < getNumThreads()) {
+            for (int i = 0; i <= getPrecision(); i++) {
+                valuesList.add(Arrays.asList(i));
+            }
+        }
+
+        // Distribute task on multiple threads.contentList
+        Thread jobs[] = new Thread[valuesList.size()];
+
+        for (int i = 0; i < valuesList.size(); i++) {
             ECalculateRunnable r = new ECalculateRunnable(valuesList.get(i));
             Thread t = new Thread(r);
             t.start();
@@ -83,7 +96,7 @@ public class ETest {
         }
 
         // Join all threads.
-        for (int i = 0; i < jobs.length; i++) {
+        for (int i = 0; i < valuesList.size(); i++) {
             try {
                 jobs[i].join();
                 if (!isQuiet()) {
@@ -106,10 +119,13 @@ public class ETest {
         // Print out the time for execution to console.
         System.out.format("Total execution time for current run (millis): %d\n", elapsedTime);
 
+        // Print out the result of execution to console.
+        System.out.format("e: %.8f\n", getResult());
+
         try {
             // Print out the results.
             List<String> resultWrite = new ArrayList<>();
-            resultWrite.add(String.valueOf(getResult()));
+            resultWrite.add(String.format("%.8f", getResult()));
             Files.write(pathWrite, resultWrite, Charset.forName("UTF-8"));
         } catch (IOException e) {
             // Print a stack trace of input-output exception.
