@@ -177,7 +177,7 @@ public class ETest {
 
         // Set the output file.
         String outputFile = "result.txt";
-        if (request.size() >= 6 && "-o".equals(request.get(5))) {
+        if (request.size() >= 6 && "-o".equals(request.get(4))) {
             outputFile = request.get(5);
         }
 
