@@ -41,6 +41,7 @@ public class ETest {
      * Run distributed e calculation
      *
      * @param pathWrite the output file
+     * @since 1.0
      */
     private static void runDistributed(Path pathWrite) {
         // Record the start time for execution.
@@ -177,7 +178,7 @@ public class ETest {
 
         // Set the output file.
         String outputFile = "result.txt";
-        if (request.size() >= 6 && "-o".equals(request.get(5))) {
+        if (request.size() >= 6 && "-o".equals(request.get(4))) {
             outputFile = request.get(5);
         }
 
