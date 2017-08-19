@@ -1,5 +1,5 @@
-# multiThreadingSystems
-<h1>Multi-Threading Systems</h1>
+# multiThreadedSystems
+<h1>Multi-Threaded Systems</h1>
 
 <h2>Course project at Sofia University "St. Kliment Ohridski", Faculty of Mathematics and Informatics.</h2>
 
