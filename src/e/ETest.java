@@ -18,22 +18,22 @@ import java.util.Scanner;
  */
 public class ETest {
     /**
-     * Declare an int to store precision used.
+     * Initialize a default precision used.
      */
     private static int precision = 1;
 
     /**
-     * Declare an int to store number of threads used.
+     * Initialize a default number of threads used.
      */
     private static int numThreads = 1;
 
     /**
-     * Declare a boolean to store c whether it is quiet.
+     * Initialize a default boolean for quiet mode.
      */
     private static boolean quiet;
 
     /**
-     * Declare an int to store final result.
+     * Initialize a default double for result.
      */
     private static double result;
 
@@ -45,7 +45,7 @@ public class ETest {
      */
     private static void runDistributed(Path pathWrite) {
         // Record the start time for execution.
-        long startTime = System.currentTimeMillis();
+        final long startTime = System.currentTimeMillis();
 
         // Set thread usage counter.
         int jobNumber = 0;
@@ -112,10 +112,10 @@ public class ETest {
         }
 
         // Record the end time for execution.
-        long stopTime = System.currentTimeMillis();
+        final long stopTime = System.currentTimeMillis();
 
         // Calculate the time for execution.
-        long elapsedTime = stopTime - startTime;
+        final long elapsedTime = stopTime - startTime;
 
         // Print out the time for execution to console.
         System.out.format("Total execution time for current run (millis): %d\n", elapsedTime);
