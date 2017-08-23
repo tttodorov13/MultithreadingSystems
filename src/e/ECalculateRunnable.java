@@ -12,14 +12,25 @@ import java.util.List;
 class ECalculateRunnable implements Runnable {
 
     /**
-     * Declare an int for calculated values.
+     * Declare an Integer list for computable values.
      */
     private List<Integer> values;
 
+    /**
+     * Constructor to initialize an Integer list for computable values.
+     *
+     * @param values the values to be calculated
+     * @since 1.0
+     */
     ECalculateRunnable(List<Integer> values) {
         this.values = values;
     }
 
+    /**
+     * Override the run method to calculate and add member.
+     *
+     * @since 1.0
+     */
     @Override
     public void run() {
         // Calculated e for each value and add it to the common result.
