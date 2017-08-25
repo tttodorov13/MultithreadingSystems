@@ -2,11 +2,12 @@
 /multiThreadedSystems.iml
 /.idea/
 /out/
-/huffman.jar
-/result.dat
 /huffman/
+/huffman.jar
 /result.txt
+/result.dat
 /e/
 /e.jar
 /m3x-data.in
 /m3x-data.out
+/m3x.jar
